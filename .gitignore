@@ -1,0 +1,21 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Build outputs and dependencies
+node_modules/
+dist/
+build/
+target/
+.gradle/
+__pycache__/
+.pytest_cache/
+.venv/
+*.py[cod]
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
