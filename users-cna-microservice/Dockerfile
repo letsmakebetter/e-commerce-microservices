@@ -3,7 +3,7 @@ FROM python:3.12-slim
 WORKDIR /app
 
 COPY Pipfile Pipfile.lock ./
-RUN pip install --no-cache-dir pipenv && pipenv sync --system --deploy
+RUN pip install --no-cache-dir pipenv && pipenv sync --system
 
 COPY . .
 
