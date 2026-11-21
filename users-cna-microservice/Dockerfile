@@ -1,14 +1,12 @@
-# Install python in the container
-FROM python:3.10.5-alpine3.16
-RUN pip install pipenv
-WORKDIR /usr/src/app
-# Copy the Pipfile
-COPY Pipfile ./
-# install the packages from the requirements.txt file in the container
-RUN pipenv install
-# expose the port that uvicorn will run the app
-EXPOSE 9090
-# copy the local app/ folder to the /app fodler in the container
+FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY Pipfile Pipfile.lock ./
+RUN pip install --no-cache-dir pipenv && pipenv sync --system --deploy
+
 COPY . .
-# execute the command python main.py (in the WORKDIR) to start the app
-CMD ["pipenv", "run", "python", "app.py"]
+
+EXPOSE 9090
+
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "9090"]

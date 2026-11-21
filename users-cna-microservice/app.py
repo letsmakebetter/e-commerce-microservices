@@ -1,32 +1,47 @@
-from fastapi import FastAPI
+from contextlib import asynccontextmanager
+
 import uvicorn
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
-from db.config import engine, Base
-from routers import user_router
-from fastapi import Depends
-from db.config import async_session
-from db.models.user import User
+from db.config import Base, engine
+from routers import auth_router, user_router
+from settings import settings
 
-app = FastAPI()
+
+@asynccontextmanager
+async def lifespan(_: FastAPI):
+    """Create missing tables without removing existing user data."""
+    async with engine.begin() as connection:
+        await connection.run_sync(Base.metadata.create_all)
+    yield
+    await engine.dispose()
+
+
+app = FastAPI(
+    title="User Profile Service",
+    version="1.0.0",
+    description="Registration, authentication, and user-profile APIs for the e-commerce platform.",
+    lifespan=lifespan,
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.cors_origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(auth_router.router)
 app.include_router(user_router.router)
 
 
-@app.on_event("startup")
-async def startup():
-    # create db tables
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.drop_all)
-        await conn.run_sync(Base.metadata.create_all)    
-    
-    async with async_session() as session:
-        async with session.begin():
-            session.add_all([
-                User(name = 'Peter', email = 'peter@exmaple.com', mobile='298479284'),
-                User(name = 'John', email = 'john@exmaple.com', mobile='998479284'),
-                User(name = 'Jason', email = 'jason@exmaple.com', mobile='928479285')]
-            )
-        await session.commit()
-        
+@app.get("/health", tags=["System"])
+async def health_check():
+    """Return service availability for local checks and container orchestration."""
+    return {"status": "ok", "service": "user-profile"}
 
-if __name__ == '__main__':
-    uvicorn.run("app:app", port=9090, host='127.0.0.1', reload=True)
+
+if __name__ == "__main__":
+    uvicorn.run("app:app", host="0.0.0.0", port=9090, reload=True)

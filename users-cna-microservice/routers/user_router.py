@@ -1,29 +1,37 @@
-from typing import List, Optional
+from typing import Annotated
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException, status
 
 from db.dals.user_dal import UserDAL
 from db.models.user import User
-from dependencies import get_user_dal
+from dependencies import get_current_user, get_user_dal
+from schemas import UserResponse, UserUpdate
 
-router = APIRouter()
-
-
-@router.post("/users")
-async def create_user(name: str, email: str, mobile: str, user_dal: UserDAL = Depends(get_user_dal)):
-    print("name: " + name)
-    return await user_dal.create_user(name, email, mobile)
+router = APIRouter(prefix="/users", tags=["Profile"])
 
 
-@router.put("/users/{user_id}")
-async def update_user(user_id: int, name: Optional[str] = None, email: Optional[str] = None, mobile: Optional[str] = None,
-                      user_dal: UserDAL = Depends(get_user_dal)):
-    return await user_dal.update_user(user_id, name, email, mobile)
+@router.get("/me", response_model=UserResponse)
+async def get_my_profile(current_user: Annotated[User, Depends(get_current_user)]):
+    """Return the profile belonging to the access token."""
+    return current_user
 
-@router.get("/users/{user_id}")
-async def get_user(user_id: int, user_dal: UserDAL = Depends(get_user_dal)):
-    return await user_dal.get_user(user_id)
 
-@router.get("/users")
-async def get_all_users(user_dal: UserDAL = Depends(get_user_dal)) -> List[User]:
-    return await user_dal.get_all_users()
+@router.put("/me", response_model=UserResponse)
+async def update_my_profile(
+    update: UserUpdate,
+    current_user: Annotated[User, Depends(get_current_user)],
+    user_dal: Annotated[UserDAL, Depends(get_user_dal)],
+):
+    """Update the authenticated user's name, email, or mobile number."""
+    changes = update.model_dump(exclude_unset=True)
+    if not changes:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Provide at least one field to update.")
+
+    if "email" in changes:
+        changes["email"] = changes["email"].lower()
+        existing_user = await user_dal.get_by_email(changes["email"])
+        if existing_user and existing_user.id != current_user.id:
+            raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="This email address is already registered.")
+
+    updated_user = await user_dal.update_user(current_user, **changes)
+    return await user_dal.save(updated_user)

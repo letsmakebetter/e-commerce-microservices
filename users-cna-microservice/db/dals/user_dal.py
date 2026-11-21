@@ -1,35 +1,34 @@
-from typing import List, Optional
-
-from sqlalchemy import update
-from sqlalchemy.future import select
-from sqlalchemy.orm import Session
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from db.models.user import User
 
-class UserDAL():
-    def __init__(self, db_session: Session):
+
+class UserDAL:
+    def __init__(self, db_session: AsyncSession):
         self.db_session = db_session
 
-    async def create_user(self, name: str, email: str,   mobile: str):
-        new_user = User(name=name,email=email, mobile=mobile)
-        self.db_session.add(new_user)
+    async def create_user(self, *, name: str, email: str, mobile: str, password_hash: str) -> User:
+        user = User(name=name, email=email, mobile=mobile, password_hash=password_hash)
+        self.db_session.add(user)
         await self.db_session.flush()
+        return user
 
-    async def get_all_users(self) -> List[User]:
-        q = await self.db_session.execute(select(User).order_by(User.id))
-        return q.scalars().all()
+    async def get_by_email(self, email: str) -> User | None:
+        result = await self.db_session.execute(select(User).where(User.email == email))
+        return result.scalar_one_or_none()
 
-    async def get_user(self, user_id: str) -> User:
-        q = await self.db_session.execute(select(User).where(User.id == user_id))
-        return q.scalar()
+    async def get_by_id(self, user_id: int) -> User | None:
+        result = await self.db_session.execute(select(User).where(User.id == user_id))
+        return result.scalar_one_or_none()
 
-    async def update_user(self, user_id: int, name: Optional[str], email: Optional[str], mobile: Optional[str]):
-        q = update(User).where(User.id == user_id)
-        if name:
-            q = q.values(name=name)
-        if email:
-            q = q.values(email=email)
-        if mobile:
-            q = q.values(mobile=mobile)
-        q.execution_options(synchronize_session="fetch")
-        await  self.db_session.execute(q)
+    async def update_user(self, user: User, **changes: str) -> User:
+        for field, value in changes.items():
+            setattr(user, field, value)
+        await self.db_session.flush()
+        return user
+
+    async def save(self, user: User) -> User:
+        await self.db_session.commit()
+        await self.db_session.refresh(user)
+        return user
