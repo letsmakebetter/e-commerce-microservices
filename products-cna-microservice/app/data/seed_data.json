@@ -1,0 +1,498 @@
+{
+  "products": [
+    {
+      "_id": "301671",
+      "department": "Shoes",
+      "category": "Shoes/Women/Pumps",
+      "title": "Evening Platform Pumps",
+      "shortDescription": "Evening Platform Pumps",
+      "description": "Evening platform pumps that put the perfect finishing touch on a glamorous night-out outfit.",
+      "price": 145.99,
+      "currency": "USD",
+      "rating": 4.5,
+      "stock": 24,
+      "brand": "Guess",
+      "thumbnail": "../assets/images/deals/shoes.jpg",
+      "image": "../assets/images/deals/shoes.jpg",
+      "attributes": {
+        "brand": "Guess"
+      },
+      "secondaryAttributes": {
+        "style": "Designer",
+        "type": "Platform"
+      },
+      "variants": [
+        {
+          "sku": "sku2441",
+          "attributes": {
+            "size": {
+              "US": "6"
+            },
+            "color": "blue"
+          },
+          "secondaryAttributes": {
+            "width": "B",
+            "heelHeight": 5.0
+          }
+        },
+        {
+          "sku": "sku2442",
+          "attributes": {
+            "size": {
+              "US": "7"
+            },
+            "color": "black"
+          },
+          "secondaryAttributes": {
+            "width": "B",
+            "heelHeight": 5.0
+          }
+        }
+      ],
+      "lastUpdated": "2026-11-01T00:00:00+00:00"
+    },
+    {
+      "_id": "301672",
+      "department": "Shoes",
+      "category": "Shoes/Women/Slippers",
+      "title": "Memory Foam House Slippers",
+      "shortDescription": "Memory foam slippers",
+      "description": "Indoor slippers with a memory foam sole and a washable fleece lining.",
+      "price": 29.5,
+      "currency": "USD",
+      "rating": 4.2,
+      "stock": 120,
+      "brand": "Comfy",
+      "thumbnail": "../assets/images/deals/slippers.webp",
+      "image": "../assets/images/deals/slippers.webp",
+      "attributes": {
+        "brand": "Comfy"
+      },
+      "secondaryAttributes": {
+        "material": "Fleece"
+      },
+      "variants": [
+        {
+          "sku": "sku3101",
+          "attributes": {
+            "size": {
+              "US": "8"
+            },
+            "color": "grey"
+          },
+          "secondaryAttributes": {}
+        }
+      ],
+      "lastUpdated": "2026-11-01T00:00:00+00:00"
+    },
+    {
+      "_id": "401010",
+      "department": "Mobiles",
+      "category": "Mobiles/Smartphones",
+      "title": "Pixel Nova 8 Smartphone",
+      "shortDescription": "6.3 inch OLED smartphone",
+      "description": "A 6.3 inch OLED smartphone with a 50 MP main camera, 8 GB of memory and a 4600 mAh battery.",
+      "price": 699.0,
+      "currency": "USD",
+      "rating": 4.7,
+      "stock": 45,
+      "brand": "Nova",
+      "thumbnail": "../assets/images/deals/mobile.webp",
+      "image": "../assets/images/deals/mobile.webp",
+      "attributes": {
+        "brand": "Nova"
+      },
+      "secondaryAttributes": {
+        "screen": "6.3\"",
+        "battery": "4600mAh"
+      },
+      "variants": [
+        {
+          "sku": "sku5501",
+          "attributes": {
+            "storage": "128GB",
+            "color": "obsidian"
+          },
+          "secondaryAttributes": {}
+        },
+        {
+          "sku": "sku5502",
+          "attributes": {
+            "storage": "256GB",
+            "color": "porcelain"
+          },
+          "secondaryAttributes": {}
+        }
+      ],
+      "lastUpdated": "2026-11-01T00:00:00+00:00"
+    },
+    {
+      "_id": "401011",
+      "department": "Mobiles",
+      "category": "Mobiles/Accessories",
+      "title": "Fast Charge USB-C Adapter 65W",
+      "shortDescription": "65W USB-C charger",
+      "description": "A 65 W gallium nitride charger with two USB-C ports and one USB-A port.",
+      "price": 39.99,
+      "currency": "USD",
+      "rating": 4.4,
+      "stock": 300,
+      "brand": "Nova",
+      "thumbnail": "../assets/images/deals/mobile.webp",
+      "image": "../assets/images/deals/mobile.webp",
+      "attributes": {
+        "brand": "Nova"
+      },
+      "secondaryAttributes": {
+        "power": "65W"
+      },
+      "variants": [
+        {
+          "sku": "sku5610",
+          "attributes": {
+            "color": "white"
+          },
+          "secondaryAttributes": {}
+        }
+      ],
+      "lastUpdated": "2026-11-01T00:00:00+00:00"
+    },
+    {
+      "_id": "501200",
+      "department": "Electronics",
+      "category": "Electronics/Audio/Headphones",
+      "title": "Studio Wireless Headphones",
+      "shortDescription": "Noise cancelling headphones",
+      "description": "Over-ear wireless headphones with active noise cancellation and 30 hours of battery life.",
+      "price": 199.99,
+      "currency": "USD",
+      "rating": 4.6,
+      "stock": 60,
+      "brand": "Acoustix",
+      "thumbnail": "../assets/images/categories/electronics.webp",
+      "image": "../assets/images/categories/electronics.webp",
+      "attributes": {
+        "brand": "Acoustix"
+      },
+      "secondaryAttributes": {
+        "connectivity": "Bluetooth 5.3"
+      },
+      "variants": [
+        {
+          "sku": "sku7001",
+          "attributes": {
+            "color": "midnight"
+          },
+          "secondaryAttributes": {}
+        },
+        {
+          "sku": "sku7002",
+          "attributes": {
+            "color": "sand"
+          },
+          "secondaryAttributes": {}
+        }
+      ],
+      "lastUpdated": "2026-11-01T00:00:00+00:00"
+    },
+    {
+      "_id": "501201",
+      "department": "Electronics",
+      "category": "Electronics/Computers/Laptops",
+      "title": "UltraBook 14 Laptop",
+      "shortDescription": "14 inch ultrabook",
+      "description": "A 14 inch laptop with 16 GB of memory, a 512 GB SSD and an aluminium chassis.",
+      "price": 1249.0,
+      "currency": "USD",
+      "rating": 4.3,
+      "stock": 18,
+      "brand": "Lumen",
+      "thumbnail": "../assets/images/categories/electronics.webp",
+      "image": "../assets/images/categories/electronics.webp",
+      "attributes": {
+        "brand": "Lumen"
+      },
+      "secondaryAttributes": {
+        "cpu": "8-core",
+        "ram": "16GB"
+      },
+      "variants": [
+        {
+          "sku": "sku7110",
+          "attributes": {
+            "storage": "512GB"
+          },
+          "secondaryAttributes": {}
+        }
+      ],
+      "lastUpdated": "2026-11-01T00:00:00+00:00"
+    },
+    {
+      "_id": "601300",
+      "department": "Appliances",
+      "category": "Appliances/Kitchen/Ovens",
+      "title": "Convection Countertop Oven",
+      "shortDescription": "25 L convection oven",
+      "description": "A 25 litre countertop convection oven with six cooking programmes.",
+      "price": 189.0,
+      "currency": "USD",
+      "rating": 4.1,
+      "stock": 32,
+      "brand": "HomeChef",
+      "thumbnail": "../assets/images/deals/oven.webp",
+      "image": "../assets/images/deals/oven.webp",
+      "attributes": {
+        "brand": "HomeChef"
+      },
+      "secondaryAttributes": {
+        "capacity": "25L"
+      },
+      "variants": [
+        {
+          "sku": "sku8201",
+          "attributes": {
+            "color": "steel"
+          },
+          "secondaryAttributes": {}
+        }
+      ],
+      "lastUpdated": "2026-11-01T00:00:00+00:00"
+    },
+    {
+      "_id": "601301",
+      "department": "Appliances",
+      "category": "Appliances/Kitchen/Blenders",
+      "title": "High Speed Blender 1200W",
+      "shortDescription": "1200W blender",
+      "description": "A 1200 watt blender with a 1.8 litre tritan jar and four preset programmes.",
+      "price": 119.5,
+      "currency": "USD",
+      "rating": 3.9,
+      "stock": 0,
+      "brand": "HomeChef",
+      "thumbnail": "../assets/images/categories/appliances.webp",
+      "image": "../assets/images/categories/appliances.webp",
+      "attributes": {
+        "brand": "HomeChef"
+      },
+      "secondaryAttributes": {
+        "power": "1200W"
+      },
+      "variants": [
+        {
+          "sku": "sku8310",
+          "attributes": {
+            "color": "black"
+          },
+          "secondaryAttributes": {}
+        }
+      ],
+      "lastUpdated": "2026-11-01T00:00:00+00:00"
+    },
+    {
+      "_id": "701400",
+      "department": "Fashion",
+      "category": "Fashion/Women/Dresses",
+      "title": "Embroidered Cotton Kurta",
+      "shortDescription": "Embroidered cotton kurta",
+      "description": "A straight-cut cotton kurta with hand embroidery at the neckline.",
+      "price": 54.0,
+      "currency": "USD",
+      "rating": 4.4,
+      "stock": 75,
+      "brand": "Anokhi",
+      "thumbnail": "../assets/images/deals/kurtha.webp",
+      "image": "../assets/images/deals/kurtha.webp",
+      "attributes": {
+        "brand": "Anokhi"
+      },
+      "secondaryAttributes": {
+        "material": "Cotton"
+      },
+      "variants": [
+        {
+          "sku": "sku9101",
+          "attributes": {
+            "size": {
+              "IN": "M"
+            },
+            "color": "indigo"
+          },
+          "secondaryAttributes": {}
+        },
+        {
+          "sku": "sku9102",
+          "attributes": {
+            "size": {
+              "IN": "L"
+            },
+            "color": "indigo"
+          },
+          "secondaryAttributes": {}
+        }
+      ],
+      "lastUpdated": "2026-11-01T00:00:00+00:00"
+    },
+    {
+      "_id": "801500",
+      "department": "Home",
+      "category": "Home/Stationery/Pens",
+      "title": "Gel Ink Pen Set of 12",
+      "shortDescription": "Set of 12 gel pens",
+      "description": "A set of twelve quick-drying gel ink pens with a 0.5 mm tip.",
+      "price": 12.99,
+      "currency": "USD",
+      "rating": 4.8,
+      "stock": 500,
+      "brand": "Inkwell",
+      "thumbnail": "../assets/images/deals/pens.webp",
+      "image": "../assets/images/deals/pens.webp",
+      "attributes": {
+        "brand": "Inkwell"
+      },
+      "secondaryAttributes": {
+        "tip": "0.5mm"
+      },
+      "variants": [
+        {
+          "sku": "sku9500",
+          "attributes": {
+            "pack": "12"
+          },
+          "secondaryAttributes": {}
+        }
+      ],
+      "lastUpdated": "2026-11-01T00:00:00+00:00"
+    },
+    {
+      "_id": "801501",
+      "department": "Home",
+      "category": "Home/Decor/Lighting",
+      "title": "Warm LED Desk Lamp",
+      "shortDescription": "Dimmable LED desk lamp",
+      "description": "A dimmable LED desk lamp with three colour temperatures and a USB charging port.",
+      "price": 44.9,
+      "currency": "USD",
+      "rating": 4.0,
+      "stock": 90,
+      "brand": "Lumen",
+      "thumbnail": "../assets/images/categories/home.webp",
+      "image": "../assets/images/categories/home.webp",
+      "attributes": {
+        "brand": "Lumen"
+      },
+      "secondaryAttributes": {
+        "power": "9W"
+      },
+      "variants": [
+        {
+          "sku": "sku9610",
+          "attributes": {
+            "color": "white"
+          },
+          "secondaryAttributes": {}
+        }
+      ],
+      "lastUpdated": "2026-11-01T00:00:00+00:00"
+    },
+    {
+      "_id": "901600",
+      "department": "Toys",
+      "category": "Toys/Building/Blocks",
+      "title": "Creative Building Blocks 240 Pieces",
+      "shortDescription": "240 piece block set",
+      "description": "A 240 piece building block set for ages four and up, with a storage box.",
+      "price": 34.99,
+      "currency": "USD",
+      "rating": 4.6,
+      "stock": 140,
+      "brand": "BrickLab",
+      "thumbnail": "../assets/images/categories/toys.webp",
+      "image": "../assets/images/categories/toys.webp",
+      "attributes": {
+        "brand": "BrickLab"
+      },
+      "secondaryAttributes": {
+        "ageRange": "4+"
+      },
+      "variants": [
+        {
+          "sku": "sku9700",
+          "attributes": {
+            "pieces": "240"
+          },
+          "secondaryAttributes": {}
+        }
+      ],
+      "lastUpdated": "2026-11-01T00:00:00+00:00"
+    }
+  ],
+  "deals": [
+    {
+      "_id": "deal-1",
+      "productId": "301671",
+      "sku": "sku2441",
+      "title": "Evening Platform Pumps",
+      "thumbnail": "../assets/images/deals/shoes.jpg",
+      "originalPrice": 145.99,
+      "dealPrice": 109.49,
+      "discountPercentage": 25,
+      "currency": "USD"
+    },
+    {
+      "_id": "deal-2",
+      "productId": "401010",
+      "sku": "sku5501",
+      "title": "Pixel Nova 8 Smartphone",
+      "thumbnail": "../assets/images/deals/mobile.webp",
+      "originalPrice": 699.0,
+      "dealPrice": 629.1,
+      "discountPercentage": 10,
+      "currency": "USD"
+    },
+    {
+      "_id": "deal-3",
+      "productId": "601300",
+      "sku": "sku8201",
+      "title": "Convection Countertop Oven",
+      "thumbnail": "../assets/images/deals/oven.webp",
+      "originalPrice": 189.0,
+      "dealPrice": 151.2,
+      "discountPercentage": 20,
+      "currency": "USD"
+    },
+    {
+      "_id": "deal-4",
+      "productId": "801500",
+      "sku": "sku9500",
+      "title": "Gel Ink Pen Set of 12",
+      "thumbnail": "../assets/images/deals/pens.webp",
+      "originalPrice": 12.99,
+      "dealPrice": 9.74,
+      "discountPercentage": 25,
+      "currency": "USD"
+    },
+    {
+      "_id": "deal-5",
+      "productId": "701400",
+      "sku": "sku9101",
+      "title": "Embroidered Cotton Kurta",
+      "thumbnail": "../assets/images/deals/kurtha.webp",
+      "originalPrice": 54.0,
+      "dealPrice": 43.2,
+      "discountPercentage": 20,
+      "currency": "USD"
+    },
+    {
+      "_id": "deal-6",
+      "productId": "301672",
+      "sku": "sku3101",
+      "title": "Memory Foam House Slippers",
+      "thumbnail": "../assets/images/deals/slippers.webp",
+      "originalPrice": 29.5,
+      "dealPrice": 22.13,
+      "discountPercentage": 25,
+      "currency": "USD"
+    }
+  ]
+}
