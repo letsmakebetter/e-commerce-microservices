@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.errors import register_error_handlers
 from app.core.request_id import RequestIdMiddleware
 from app.db.config import Base, engine
-from app.routers import health_router
+from app.routers import catalog_router, health_router, product_router
 from app.settings import settings
 
 
@@ -56,6 +56,8 @@ app.add_middleware(
 register_error_handlers(app)
 
 app.include_router(health_router.router)
+app.include_router(product_router.router)
+app.include_router(catalog_router.router)
 
 
 if __name__ == "__main__":
